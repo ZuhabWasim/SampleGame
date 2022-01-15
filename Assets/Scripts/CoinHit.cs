@@ -27,7 +27,7 @@ public class CoinHit : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Ball")
         {
             Destroy(this.gameObject);
 
