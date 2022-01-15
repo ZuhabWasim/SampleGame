@@ -8,7 +8,7 @@ public class SpawnBall : MonoBehaviour
 
     private Transform _ballTransform;
     
-    private Vector3 _ballSpawnLocation = new Vector3(0.3f,2.97f,-3.96f);
+    private Vector3 _ballSpawnLocation = new Vector3(0.2132993f,4.48f,-1.301f);
     private Rigidbody _rigidbody;
     
     // Start is called before the first frame update
