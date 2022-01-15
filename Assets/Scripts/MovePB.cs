@@ -7,13 +7,13 @@ public class MovePB : MonoBehaviour
 {
     private float _playerInput;
     private float _rotationInput;
-    private Vector3 _userRot;
+    public Vector3 _userRot;
     private bool _userJumped;
 
     private const float _inputScale = 0.5f;
     
     private Rigidbody _rigidbody;
-    private Transform _transform;
+    public Transform _transform;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,14 +34,14 @@ public class MovePB : MonoBehaviour
     private void FixedUpdate()
     {
         _userRot = _transform.rotation.eulerAngles;
-        _userRot += new Vector3(0, _rotationInput, 0);
+        _userRot += new Vector3(_playerInput, _rotationInput, 0);
 
         _transform.rotation = Quaternion.Euler(_userRot);
-        _rigidbody.velocity += transform.forward * _playerInput * _inputScale;
+        // _rigidbody.velocity += transform.forward * _playerInput * _inputScale;
 
         if (_userJumped)
         {
-            _rigidbody.AddForce(Vector3.up, ForceMode.VelocityChange); // Jump in the Y Axis of the world
+            // _rigidbody.AddForce(Vector3.up, ForceMode.VelocityChange); // Jump in the Y Axis of the world
             _userJumped = false;
         }
     }
